@@ -1,0 +1,7 @@
+nomor_nasabah,nama_nasabah,email
+001,Rizal,rizal@gmail.com
+002,Ruli,ruli@gmail.com
+003,Aslan,aslan@gmail.com
+004,felin,felin@gmail.com
+005,agus,agus@gmail.com
+006,edi,edi@gmail.com
