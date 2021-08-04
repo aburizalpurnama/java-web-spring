@@ -1,4 +1,4 @@
-package training.internet.banking;
+package training.internet.banking.entity;
 
 public class Nasabah {
 
@@ -11,12 +11,27 @@ public class Nasabah {
         jumlahNasabah++;
     }
 
+    public Nasabah(String nomor, String name, String email) {
+        this.nomor = nomor;
+        this.name = name;
+        this.email = email;
+        jumlahNasabah++;
+    }
+
     public static void tampilkanJumlahNasabah(){
         System.out.println("Jumlah nasabah saat ini adalah : " + jumlahNasabah);
     }
 
+    @Override
+    public String toString() {
+        return "Nasabah{" +
+                "nomor='" + nomor + '\'' +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
     public String getName(){
-        System.out.println(name + " adalah nasabah yang ke-" + jumlahNasabah);
         return this.name;
     }
 

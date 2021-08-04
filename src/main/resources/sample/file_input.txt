@@ -5,3 +5,5 @@ nomor_nasabah,nama_nasabah,email
 004,felin,felin@gmail.com
 005,agus,agus@gmail.com
 006,edi,edi@gmail.com
+007,kurniawan,kurniawan@gmail.com
+008, kunciro, kunciro@gmail.com
