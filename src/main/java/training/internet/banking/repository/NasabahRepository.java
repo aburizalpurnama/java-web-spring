@@ -2,6 +2,7 @@ package training.internet.banking.repository;
 
 import training.internet.banking.entity.Nasabah;
 
+import java.sql.Connection;
 import java.util.List;
 
 public interface NasabahRepository {

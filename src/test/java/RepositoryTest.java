@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import training.internet.banking.entity.Nasabah;
+import training.internet.banking.helper.DatabaseHelper;
 import training.internet.banking.repository.NasabahRepository;
 import training.internet.banking.repository.NasabahRepositoryImpl;
 
@@ -14,14 +15,10 @@ public class RepositoryTest {
 
     @BeforeEach
     void setUp() {
-        repository = new NasabahRepositoryImpl();
+        repository = new NasabahRepositoryImpl(DatabaseHelper.connect());
     }
 
-    @Test
-    void testConnection() {
-        Assertions.assertEquals(true, repository.connect());
-        Assertions.assertEquals(true, repository.disconnect());
-    }
+
 
     @Test
     void testInsert() {

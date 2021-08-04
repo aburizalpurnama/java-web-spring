@@ -15,28 +15,13 @@ public class NasabahRepositoryImpl implements NasabahRepository{
 
     Connection connection;
 
-    public boolean connect(){
-        try {
-           connection = DriverManager.getConnection(Config.JDBC_URL, Config.JDBC_USERNAME, Config.JDBC_PASSWORD);
-        } catch (SQLException e){
-            e.printStackTrace();
-        }
-        return true;
-    }
-
-    public boolean disconnect(){
-        try {
-            connection.close();
-        } catch (SQLException exception) {
-            exception.printStackTrace();
-        }
-        return true;
+    public NasabahRepositoryImpl(Connection connection) {
+        this.connection = connection;
     }
 
     @Override
     public void insert(Nasabah nasabah) {
         try {
-            connect();
             connection.setAutoCommit(false);
             PreparedStatement ps = connection.prepareStatement(SQL_INSERT);
             ps.setString(1, nasabah.getName());
@@ -44,7 +29,6 @@ public class NasabahRepositoryImpl implements NasabahRepository{
             ps.executeUpdate();
             connection.commit();
             connection.setAutoCommit(true);
-            disconnect();
         } catch (SQLException exception) {
             exception.printStackTrace();
             try {

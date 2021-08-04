@@ -1,5 +1,6 @@
 package training.internet.banking.service;
 
-public class NasabahService {
-    
+public interface NasabahService {
+    public void addNasabah(String name, String email);
+
 }
